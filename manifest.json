@@ -1,0 +1,13 @@
+{
+    "manifest_version": 1,
+    "id": "zabbix-admin-ro-module",
+    "name": "General customization module",
+    "namespace": "ZabbixAdminRoModule",
+    "version": "0.19",
+    "actions": {
+	"triggers_ro": {
+	    "class": "CControllerTriggerRO",
+	    "view": "module.triggersro.view"
+	}
+     }
+}
