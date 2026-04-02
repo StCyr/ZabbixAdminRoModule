@@ -14,7 +14,7 @@ It's based on information I've found on:
 
 # Features
 
-After installing this module, you will be presented with a new "Custom" menu (redacted in the screenshot here below) containing one "Triggers view" entry. Clicking on this menu entry will present you with a "Triggers" view that you can use to see triggers assigned to hosts you have read-access to. This view offers you most of the usual filters you are accustomed to in a pristine Zabbix installation:
+After installing this module, you will be presented with a new "Custom" menu (redacted in the screenshot here below) containing one "Triggers view" entry. Clicking on this menu entry will present you with a "Triggers" view that you can use to see triggers assigned to hosts you have at least read-access to. This view offers you most of the usual filters you are accustomed to in a pristine Zabbix installation:
 
 ![Screenshot of the module](assets/ZabbixAdminRoModule_Screenshot.png)
 
