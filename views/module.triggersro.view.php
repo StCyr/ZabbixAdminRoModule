@@ -1,7 +1,7 @@
 <?php
-//$this->addCssFile('modules/ZabbixAdminRoModule/views/css/style.css');
+$this->addCssFile('modules/ZabbixAdminRoModule/views/css/style.css');
 
-$widget = (new CWidget())->setTitle(_('Triggers'));
+$page = (new CHtmlPage())->setTitle(_('Triggers'));
 
 // Copied from include/views/configuration.triggers.list.php
 $filter_column1 = (new CFormList())
@@ -45,12 +45,17 @@ $filter = (new CFilter())
 $widget->addItem($filter);
 
 // Create result table
+//foreach($data['triggers'] as $trigger) {
+//	var_dump($trigger);
+//	print('<br>');
+//}
 $table = new CTableInfo();
 $table->setHeader([
 	(new CColHeader(_('Host'))),
 	(new CColHeader(_('Trigger'))),
 #	(new CColHeader(_('Expression'))), # Do not display expressions as it may leak credentials
-	(new CColHeader(_('Tags')))
+	(new CColHeader(_('Tags'))),
+	(new CColHeader(_('Status'))),
 ]);
 
 // Adds data to the table
@@ -59,12 +64,18 @@ foreach($data['triggers'] as $trigger) {
 	$tags = rtrim($tags, ', ');
 	$host = new CCol($trigger['hosts'][0]['host']);
 	$description = new CCol($trigger['description']);
-	$table->addRow([$host, $description, $tags]);
+	$status = new CCol($trigger['status'] == 0 ? 'enabled' : 'disabled');
+	if ($trigger['status'] == 0) {
+		$status->addClass('TextGreen');
+	} else {
+		$status->addClass('TextRed');
+	};
+	$table->addRow([$host, $description, $tags, $status]]);
 };
 
 // Adds table
-$widget->addItem($table);
+$page->addItem($table);
 
 // Shows screen
-$widget->show();
+$page->show();
 ?>

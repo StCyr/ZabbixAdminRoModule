@@ -1,9 +1,11 @@
 {
-    "manifest_version": 1,
+    "manifest_version": 2.0,
     "id": "zabbix-admin-ro-module",
     "name": "General customization module",
     "namespace": "ZabbixAdminRoModule",
-    "version": "0.19",
+    "version": "1.0.10",
+    "description": "A module providing a read-only view of triggers assigned to hosts",
+    "author": "Cyrille Bollu",
     "actions": {
 	"triggers_ro": {
 	    "class": "CControllerTriggerRO",
