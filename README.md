@@ -4,7 +4,7 @@ An important Zabbix limitation is the fact that users without administrative rig
 
 This is a major limitation when you think of it, because, while users can view that there's no problem for "their" hosts, they have hard time figuring out if that it is because there are really no problems on them or that it is because there are actually ***no triggers*** assigned to them.
 
-This module is an attempt to address this issue. It works well in our environments (Zabbix 6.0 and Zabbix 7.0), but the code here is only a redacted version of it which I haven't tested.
+This module is an attempt to address this issue. It works well in our environments (Zabbix 7.0), but the code here is only a redacted version of it which I haven't tested.
 
 It's based on information I've found on:
 
